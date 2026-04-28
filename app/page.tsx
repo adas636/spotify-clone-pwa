@@ -1,7 +1,6 @@
-"use client"; // To bardzo ważne! Mówi Next.js, że używamy tutaj stanu (useState)
+"use client";
 
 import { useState } from 'react';
-// Zwróć uwagę na zaktualizowane ścieżki importu (używamy znaczka @, o ile Next.js tak to skonfigurował, lub ../)
 import { Sidebar } from '../components/Sidebar';
 import { PlaylistView, Song } from '../components/PlaylistView';
 import { Player } from '../components/Player';
@@ -12,7 +11,6 @@ import { mockSongs } from '../data/mockData';
 export default function Home() {
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
 
-  // Usunęliśmy useEffect z registerServiceWorker, bo robimy to przez bibliotekę next-pwa!
 
   const handleSongSelect = (song: Song) => {
     setCurrentSong(song);
